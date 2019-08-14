@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<!—模板名称-->
+<name>Rd-conf</name>
+<!—模板版本号-->
+    <version>1.0.0-1</version>
+    <modules>
+    <module><!—可以有多个模块-->
+        <group>portal</group>
+        <att> 
+            <!--作用于module内所有的item，若item内部也有exec/file节点的值，则会覆盖这里的提供的值。-->
+            <!--配置发生修改后设备端要执行的命令。如重启某应用。-->
+            <exec></exec>
+            <!-- 配置文件路径，非配置组件时使用-->
+            <file></file> 
+        </att>
+        <items>
+            <!--配置项，可以有多个item-->
+            <item>
+                <!--配置的KEY，全局唯一标识。-->
+                <key>gos.srv_intf_port</key>
+                <!--配置值.                  -->
+                <value>8080</value>
+                <!--类型. string - 单行字符串，text - 多行字符.     -->
+                <type>string</type>
+                <!--配置值的正则校验，[扩展].  -->
+                <regex></regex>
+                <!--是否加密-->
+                <encrypt>0</encrypt>
+                <!--选项，用于同步配置时的同步方法。2 - 增加，已存在不覆盖(保留客户修改);  6：覆盖，不存在时增加，存在时覆盖(不保留客户修改)。 -->
+                <option>2</option>
+                <!--配置项描述, 全局唯一标识. -->
+                <desc>管理平台端口</desc>
+                <!--配置的备注信息.  -->
+                <remark></remark>
+                <att>
+                    <!--操作类别：0-配置组件, 1-宏替换，2-生成文件-->
+                    <class>0</class>
+                    <!--需要修改文件时使用，方便找到文件中要配置的位置-->
+                    <macro></macro>
+                    <!--配置发生修改后设备端要执行的命令。如重启某应用。-->
+                    <exec></exec>
+                    <!-- 配置文件路径，非配置组件时使用-->
+                    <file></file> 
+                </att>
+            </item>
+            <item>
+                <key>gos.srv_intf_addr</key>
+                <value>gdn.chinanetcenter.com</value>
+                <type>string</type>
+                <regex></regex>
+                <encrypt>0</encrypt>
+                <option>2</option>
+                <desc>管理平台地址</desc>
+                <remark></remark>
+                <att>
+                    <class>0</class>
+                    <macro></macro>
+                </att>
+            </item>
+        </items>
+</module>
+</modules>
+</root>
